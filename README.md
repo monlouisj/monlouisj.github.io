@@ -1,43 +1,100 @@
-# Astro Starter Kit: Minimal
+# CV — Guide de mise à jour
 
-```sh
-npm create astro@latest -- --template minimal
+Ce projet génère un CV web statique à partir d'un fichier `resume.json`. Toute modification du JSON est automatiquement reflétée sur le site après un push.
+
+---
+
+## 1. Modifier le contenu du CV
+
+Ouvrir le fichier `resume.json` à la racine du projet et éditer les sections selon le besoin.
+
+### Structure du fichier
+
+```
+resume.json
+├── personal        → nom, titre, localisation, email, liens sociaux
+├── experience      → postes occupés, entreprises, projets, stacks
+├── skills          → compétences développement et autres
+└── portfolio       → projets personnels avec description et liens
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Exemple : modifier le titre du poste actuel
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```json
+"personal": {
+  "name": "{prenom} {nom}",
+  "title": "Lead Développeur",   ← modifier ici
+  ...
+}
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Exemple : ajouter une expérience
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```json
+{
+  "period": "2024 - aujourd'hui",
+  "title": "Nouveau poste",
+  "company": "Nom de l'entreprise",
+  "location": "Ville",
+  "projects": [
+    {
+      "description": "Description du projet.",
+      "stack": ["Tech1", "Tech2"]
+    }
+  ]
+}
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Exemple : ajouter un projet portfolio
 
-## 🧞 Commands
+```json
+{
+  "name": "Nom du projet",
+  "description": "Description courte.",
+  "url": "https://lien-du-projet.com"
+}
+```
 
-All commands are run from the root of the project, from a terminal:
+> Pour plusieurs liens, utiliser `"urls": ["https://...", "https://..."]` à la place de `"url"`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 2. Prévisualiser en local (optionnel)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Avant de publier, vérifier le rendu dans le navigateur :
+
+```bash
+npm run dev
+```
+
+Le site est accessible sur [http://localhost:4321](http://localhost:4321). Les modifications du JSON sont prises en compte à chaud.
+
+---
+
+## 3. Publier sur GitHub Pages
+
+Une fois les modifications prêtes :
+
+```bash
+# Vérifier les fichiers modifiés
+git status
+
+# Ajouter les changements
+git add resume.json
+
+# Créer un commit
+git commit -m "Mise à jour du site"
+
+# Pousser vers GitHub
+git push
+```
+
+Le déploiement se déclenche automatiquement. Le site est mis à jour en moins d'une minute sur :
+
+**https://{user}.github.io**
+
+---
+
+## Suivi du déploiement
+
+L'avancement du déploiement est visible dans l'onglet **Actions** du dépôt GitHub. Un cercle vert indique que le déploiement est terminé.
