@@ -3,6 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://monlouisj.github.io',
-  base: '/generator',
+  site: 'https://monlouisj.github.io'
 });
