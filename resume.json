@@ -1,0 +1,173 @@
+{
+  "personal": {
+    "name": "Jeffrey Monlouis",
+    "title": "Lead Développeur",
+    "location": "Guadeloupe",
+    "phone": "0690 nn nn nn",
+    "email": "jeffreymonlouis@hotmail.com",
+    "website": "",
+    "social": {
+      "github": "https://github.com/monlouisj/",
+      "linkedin": "https://www.linkedin.com/in/jeffrey-monlouis-9a0b7ba9/"
+    }
+  },
+  "experience": [
+    {
+      "period": "2022 - aujourd'hui",
+      "title": "Lead développeur",
+      "company": "Groupe TBF",
+      "location": "Les Abymes",
+      "projects": [
+        {
+          "description": "Refonte du site e-commerce creolissime.com. Equipe de 5 développeurs, gestion de projet en méthode Agile",
+          "stack": ["Agile", "NextJS", "Prestashop", "Symfony 5", "NodeJS", "MySQL"]
+        },
+        {
+          "description": "Déploiement d'un Digital Asset Manager (DAM) pour la gestion des contenus médias du groupe.",
+          "stack": ["API REST","Scaleflex", "Filerobot", "NodeJS", "n8n"]
+        },
+        {
+          "description": "Déploiement d'un Product Information Management (PIM) pour la gestion des données produits du groupe.",
+          "stack": ["n8n", "API REST", "Akeneo", "NodeJS"]
+        },
+        {
+          "description": "Rationalisation de la circulation de l'information avec n8n: automatisation de la synchronisation des données entre les différents outils du groupe (ERP, DAM, PIM, e-commerce)",
+          "stack": ["n8n", "API REST", "Redis", "dashboards"]
+        },
+        {
+          "description": "Intégration de OpenAI pour l'automatisation de la rédaction de fiches produits et la classification par catégorie.",
+          "stack": ["n8n","IA", "LLM", "OpenAi", "API REST", "Redis", "crawling"]
+        },
+        {
+          "description": "Création d'agents et outils Claude Anthropic pour l'automatisation de tâches quotidiennes",
+          "stack": ["IA", "LLM", "Claude", "API REST", "Redis"]
+        }
+      ]
+    },
+    {
+      "period": "2015 - 2022",
+      "title": "Développeur Full-stack",
+      "company": "Noviris",
+      "location": "Baie-Mahault",
+      "projects": [
+        {
+          "description": "Développement d'un CMS custom. Plateforme mutualisée de gestion de contenus ciblée sur les radios",
+          "stack": ["Symfony 3", "Symfony 5", "VueJS", "NodeJS", "MySQL"]
+        },
+        {
+          "description": "site e-commerce et passerelle ERP",
+          "stack": ["Symfony 3", "Prestashop", "MySQL"]
+        },
+        {
+          "description": "sites de marque",
+          "stack": ["Symfony 2", "Symfony 3", "VueJS", "jQuery", "MySQL"]
+        },
+        {
+          "description": "applications Facebook canvas",
+          "stack": ["Symfony 3", "VueJS", "MySQL"]
+        },
+        {
+          "description": "outils métier internes",
+          "stack": ["NodeJS", "VueJS", "MySQL"]
+        }
+      ]
+    },
+    {
+      "period": "2014",
+      "title": "Développeur",
+      "company": "Novatec Guadeloupe",
+      "location": "Baie-Mahault",
+      "projects": [
+        {
+          "description": "Développement backend monétique",
+          "stack": ["PHP5", "MySQL", "HTML5", "CSS3", "ExtJS", "jQuery"]
+        },
+        {
+          "description": "Développement backend fidélité (Eurofid)",
+          "stack": ["PHP5", "MySQL", "HTML5", "CSS3", "ExtJS", "jQuery"]
+        }
+      ]
+    },
+    {
+      "period": "2013",
+      "title": "Développeur",
+      "company": "GMES Bugbusters",
+      "location": "Fort-de-France",
+      "projects": [
+        {
+          "description": "Développement d'un back-office et outils métiers",
+          "stack": ["PHP5", "MySQL", "HTML5", "CSS", "jQuery"]
+        }
+      ]
+    },
+    {
+      "period": "2012",
+      "title": "Chef de projet web",
+      "company": "Loué chez E.Leclerc",
+      "location": "Ivry-sur-Seine",
+      "projects": [
+        {
+          "description": "conception de la navigation"
+        },
+        {
+          "description": "pilotage du développement et de l'intégration HTML/Javascript"
+        }
+      ]
+    },
+    {
+      "period": "2009",
+      "title": "Chef de projet web",
+      "company": "E.Leclerc",
+      "location": "Ivry-sur-Seine",
+      "projects": [
+        {
+          "description": "gestion des opérations promotionnelles web"
+        },
+        {
+          "description": "pilotage de l'implémentation de XiTi, Ad Manager, Adobe Scene7"
+        },
+        {
+          "description": "analytics: mise en place d'un plan de marquage, élaboration de rapports"
+        }
+      ]
+    },
+    {
+      "period": "2006-2008",
+      "title": "Webdesigner (stages)",
+      "companies": [
+        "Droppix (startup Paris Développement)",
+        "Agence Rapp-Collins (groupe DDB)"
+      ]
+    }
+  ],
+  "skills": {
+    "development": ["Node JS","PHP","React", "Redis", "PostgreSQL","MySQL"],
+    "other": ["Anglais", "Rédaction", "Agile" ]
+  },
+  "portfolio": [
+    {
+      "name": "CREOLISSIME (Eurogold)",
+      "description": "Site e-commerce NextJS + Prestashop",
+      "url": "https://www.creolissime.com/"
+    },
+    {
+      "name": "WINMEDIA",
+      "description": "CMS custom pour la gestion de contenus de plusieurs sites de radios.",
+      "urls": [
+        "https://superadmin.labmedia.digital/login",
+        "https://www.radiopeyi.com",
+        "Radio Freesons https://freesons.re"
+      ]
+    },
+    {
+      "name": "GOURMET SHOP",
+      "description": "Site vitrine. Inscription au programme fidélité",
+      "url": "https://carte.gourmetshop.fr/"
+    },
+    {
+      "name": "LAIT'XCELLENCE",
+      "description": "Développement d'une plateforme de formation en ligne. CMS custom, paiement en ligne, frontend",
+      "url": "https://www.formations-laitxcellence.com/"
+    }
+  ]
+}
