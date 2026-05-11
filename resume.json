@@ -55,19 +55,23 @@
           "stack": ["Symfony 3", "Symfony 5", "VueJS", "NodeJS", "MySQL"]
         },
         {
-          "description": "site e-commerce et passerelle ERP",
+          "description": "Développement d'un site e-commerce et d'une passerelle ERP",
           "stack": ["Symfony 3", "Prestashop", "MySQL"]
         },
         {
-          "description": "sites de marque",
+          "description": "Sites de marque, mini-sites promotionnels",
           "stack": ["Symfony 2", "Symfony 3", "VueJS", "jQuery", "MySQL"]
         },
         {
-          "description": "applications Facebook canvas",
+          "description": "Export automatisé de données vers API Salesforce",
+          "stack": ["Symfony 3","MySQL"]
+        },
+        {
+          "description": "Applications Facebook canvas",
           "stack": ["Symfony 3", "VueJS", "MySQL"]
         },
         {
-          "description": "outils métier internes",
+          "description": "Outils métier internes",
           "stack": ["NodeJS", "VueJS", "MySQL"]
         }
       ]
@@ -161,7 +165,7 @@
     },
     {
       "name": "GOURMET SHOP",
-      "description": "Site vitrine. Inscription au programme fidélité",
+      "description": "Site vitrine. Inscription au programme fidélité. Export automatisé de données vers un connecteur SAGE X3",
       "url": "https://carte.gourmetshop.fr/"
     },
     {
