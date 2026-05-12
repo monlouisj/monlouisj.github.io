@@ -39,6 +39,10 @@
           "stack": ["n8n","IA", "LLM", "OpenAi", "API REST", "Redis", "crawling"]
         },
         {
+          "description": "Optimisation des coûts d'hébergement (RDS, ECS, Transfer Family): migration AWS",
+          "stack": ["AWS"]
+        },
+        {
           "description": "Création d'agents et outils Claude Anthropic pour l'automatisation de tâches quotidiennes",
           "stack": ["IA", "LLM", "Claude", "API REST", "Redis"]
         }
