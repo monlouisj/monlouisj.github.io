@@ -154,12 +154,14 @@
   },
   "portfolio": [
     {
-      "name": "CREOLISSIME (Eurogold)",
+      "name": "Bijouterie en ligne CREOLISSIME (Eurogold)",
+      "period": "2023 - aujourd'hui",
       "description": "Site e-commerce NextJS + Prestashop",
       "url": "https://www.creolissime.com/"
     },
     {
       "name": "WINMEDIA",
+      "period": "2020",
       "description": "CMS custom pour la gestion de contenus de plusieurs sites de radios.",
       "urls": [
         "https://superadmin.labmedia.digital/login",
@@ -168,14 +170,28 @@
       ]
     },
     {
-      "name": "GOURMET SHOP",
+      "name": "Epicerie fine GOURMET SHOP",
+      "period": "2021",
       "description": "Site vitrine. Inscription au programme fidélité. Export automatisé de données vers un connecteur SAGE X3",
       "url": "https://carte.gourmetshop.fr/"
     },
     {
-      "name": "LAIT'XCELLENCE",
+      "name": "Formations santé LAIT'XCELLENCE",
+      "period": "2020",
       "description": "Développement d'une plateforme de formation en ligne. CMS custom, paiement en ligne, frontend",
       "url": "https://www.formations-laitxcellence.com/"
+    },
+    {
+      "name": "Magazine BIEN VIVRE",
+      "period": "2019",
+      "description": "Développement d'un site éditorial.",
+      "url": "https://magazinebienvivre.fr/"
+    },
+    {
+      "name": "Agence de voyage TERRA COSTA RICA",
+      "period": "2019",
+      "description": "Développement d'un mini-site promotionnel.",
+      "url": ""
     }
   ]
 }

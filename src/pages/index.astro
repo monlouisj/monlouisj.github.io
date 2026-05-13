@@ -248,6 +248,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 							{
 								portfolio.map((item) => (
 									<li class="portfolio-item">
+										{item.period && <span class="period">{item.period}</span>}
 										<h3>{item.name}</h3>
 										<span class="project-desc">
 											{item.description}
