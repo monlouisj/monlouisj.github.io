@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import resume from '../../resume.json';
+import resume from '../../resume-en.json';
 
 export const GET: APIRoute = () => {
   const { personal, experience, skills, portfolio } = resume;
@@ -18,13 +18,13 @@ export const GET: APIRoute = () => {
   lines.push('');
 
   // Skills
-  lines.push('## Compétences');
-  lines.push(`- Développement: ${skills.development.join(', ')}`);
-  lines.push(`- Autres: ${skills.other.join(', ')}`);
+  lines.push('## Skills');
+  lines.push(`- Development: ${skills.development.join(', ')}`);
+  lines.push(`- Other: ${skills.other.join(', ')}`);
   lines.push('');
 
   // Experience
-  lines.push('## Expérience professionnelle');
+  lines.push('## Professional Experience');
   for (const job of experience) {
     const company = job.company ?? (job.companies ? job.companies.join(', ') : '');
     const location = job.location ? ` — ${job.location}` : '';

@@ -1,14 +1,15 @@
 ---
-import resume from "../../resume.json";
+import resume from "../../resume-en.json";
 import "../styles/resume.css";
 
 const { personal, experience, skills, portfolio } = resume;
 
 const siteUrl = 'https://monlouisj.github.io';
-const description = `${personal.name}, ${personal.title}. ${experience.length} ans d'expérience en développement web — ${skills.development.slice(0, 4).join(', ')} et plus.`;
+const pageUrl = `${siteUrl}/en`;
+const description = `${personal.name}, ${personal.title}. ${experience.length} years of experience in web development — ${skills.development.slice(0, 4).join(', ')} and more.`;
 ---
 
-<html lang="fr">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -18,14 +19,14 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 		<title>{personal.name} — {personal.title}</title>
 		<meta name="description" content={description} />
 		<meta name="robots" content="index, follow" />
-		<link rel="canonical" href={siteUrl} />
+		<link rel="canonical" href={pageUrl} />
 
 		<!-- Open Graph -->
 		<meta property="og:type" content="profile" />
 		<meta property="og:title" content={`${personal.name} — ${personal.title}`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:url" content={siteUrl} />
-		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:locale" content="en_US" />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary" />
@@ -46,7 +47,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 					<h1 class="name">{personal.name}</h1>
 					<p class="title">{personal.title}</p>
 				</div>
-				<a href="/en" class="lang-switch">EN</a>
+				<a href="/" class="lang-switch">FR</a>
 				<div class="header-contact">
 					<span class="contact-item">
 						<svg
@@ -143,7 +144,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 			<main class="main">
 				<!-- EXPERIENCE -->
 				<section id="experiences" class="section">
-					<h2 class="section-title">Expérience professionnelle</h2>
+					<h2 class="section-title">Professional Experience</h2>
 					<div class="timeline">
 						{
 							experience.map((job) => (
@@ -218,9 +219,9 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 				<div class="sidebar">
 					<!-- SKILLS -->
 					<section class="section">
-						<h2 class="section-title">Compétences</h2>
+						<h2 class="section-title">Skills</h2>
 						<div class="skills-group">
-							<h3 class="skills-label">Développement</h3>
+							<h3 class="skills-label">Development</h3>
 							<div class="skills-tags">
 								{
 									skills.development.map((s) => (
@@ -232,7 +233,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 							</div>
 						</div>
 						<div class="skills-group">
-							<h3 class="skills-label">Autres</h3>
+							<h3 class="skills-label">Other</h3>
 							<div class="skills-tags">
 								{
 									skills.other.map((s) => (
@@ -306,8 +307,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 									Arctic Code Vault Contributor
 								</h4>
 								<p class="badge-desc">
-									A contribué au code de 2 dépôts du 2020
-									GitHub Archive Program.
+									Contributed code to 2 repositories in the 2020 GitHub Archive Program.
 								</p>
 								<a
 									href="https://archiveprogram.github.com/"
@@ -330,10 +330,10 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 							/>
 							<div class="badge-content">
 								<h4 class="badge-title">
-									Hubmonster, vice-président
+									Hubmonster, Vice President
 								</h4>
 								<p class="badge-desc">
-									Association de promotion de l'innovation
+									Innovation promotion association
 								</p>
 								<a
 									href="https://hubmonster.io/"
