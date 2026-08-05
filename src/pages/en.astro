@@ -4,9 +4,9 @@ import "../styles/resume.css";
 
 const { personal, experience, skills, portfolio } = resume;
 
-const siteUrl = 'https://monlouisj.github.io';
+const siteUrl = "https://monlouisj.github.io";
 const pageUrl = `${siteUrl}/en`;
-const description = `${personal.name}, ${personal.title}. ${experience.length} years of experience in web development — ${skills.development.slice(0, 4).join(', ')} and more.`;
+const description = `${personal.name}, ${personal.title}. ${experience.length} years of experience in web development — ${skills.development.slice(0, 4).join(", ")} and more.`;
 ---
 
 <html lang="en">
@@ -23,14 +23,20 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} y
 
 		<!-- Open Graph -->
 		<meta property="og:type" content="profile" />
-		<meta property="og:title" content={`${personal.name} — ${personal.title}`} />
+		<meta
+			property="og:title"
+			content={`${personal.name} — ${personal.title}`}
+		/>
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={pageUrl} />
 		<meta property="og:locale" content="en_US" />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content={`${personal.name} — ${personal.title}`} />
+		<meta
+			name="twitter:title"
+			content={`${personal.name} — ${personal.title}`}
+		/>
 		<meta name="twitter:description" content={description} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -251,7 +257,11 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} y
 							{
 								portfolio.map((item) => (
 									<li class="portfolio-item">
-										{item.period && <span class="period">{item.period}</span>}
+										{item.period && (
+											<span class="period">
+												{item.period}
+											</span>
+										)}
 										<h3>{item.name}</h3>
 										<span class="project-desc">
 											{item.description}
@@ -307,7 +317,8 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} y
 									Arctic Code Vault Contributor
 								</h4>
 								<p class="badge-desc">
-									Contributed code to 2 repositories in the 2020 GitHub Archive Program.
+									Contributed code to 2 repositories in the
+									2020 GitHub Archive Program.
 								</p>
 								<a
 									href="https://archiveprogram.github.com/"
@@ -320,7 +331,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} y
 						</div>
 					</section>
 
-					<!-- Hubmonster -->
+					<!-- Hubmonster 
 					<section id="hubmonster" class="section">
 						<div class="badge-item">
 							<img
@@ -344,7 +355,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} y
 								>
 							</div>
 						</div>
-					</section>
+					</section>-->
 				</div>
 			</main>
 		</div>

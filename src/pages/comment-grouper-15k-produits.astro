@@ -1,0 +1,273 @@
+---
+import resume from "../../resume.json";
+import "../styles/resume.css";
+
+const { personal } = resume;
+const siteUrl = "https://monlouisj.github.io";
+const title = "Comment grouper 15k produits par ressemblance ?";
+const date = "3 août 2026";
+---
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} — {personal.name}</title>
+		<meta
+			name="description"
+			content="Utilisation de CLIP et FAISS pour regrouper 15 000 produits par similarité visuelle."
+		/>
+		<meta name="robots" content="index, follow" />
+		<link
+			rel="canonical"
+			href={`${siteUrl}/comment-grouper-15k-produits`}
+		/>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content="Utilisation de CLIP et FAISS pour regrouper 15 000 produits par similarité visuelle."
+		/>
+		<meta
+			property="og:url"
+			content={`${siteUrl}/comment-grouper-15k-produits`}
+		/>
+		<meta property="og:locale" content="fr_FR" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="page">
+			<nav class="article-nav">
+				<a href="/">&larr; Accueil</a>
+			</nav>
+
+			<article>
+				<header class="article-header">
+					<h1>{title}</h1>
+					<p class="article-meta">{date} &middot; {personal.name}</p>
+				</header>
+
+				<div class="article-body">
+					<p>
+						Alors qu'un humain qui regarde une vitrine peut
+						facilement repérer des produits identiques, un programme
+						va se baser sur des données qui ne sont pas forcément
+						rédigées dans le but de faciliter une classification.
+					</p>
+					<p>
+						Pour que notre programme voie nos produits, il doit
+						d'abord créer une représentation vectorielle numérique
+						des visuels (embeddings). Pour cela nous allons utiliser
+						le modèle de vision <a
+							href="https://openai.com/index/clip/"
+							target="_blank"><strong>CLIP</strong></a
+						> (Contrastive Language–Image Pre-training) développé par
+						<a href="https://openai.com/fr-FR/" target="_blank"
+							>OpenAI</a
+						> et la librairie
+						<a
+							href="https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/"
+							target="_blank"><strong>FAISS</strong></a
+						> (Facebook AI Similarity Search) pour générer les embeddings
+						de nos 15 000 images et ensuite les regrouper par ressemblance.
+					</p>
+
+					<h2>Les données</h2>
+					<p>
+						Dans un dossier, nous avons la totalité des images
+						redimensionnées en 200×200px au format JPG.<br />
+						Dans une base de données, les informations basiques de chaque
+						produit : famille, métal, référence.
+					</p>
+
+					<h2>Le process</h2>
+					<p>
+						En local, nous allons utiliser PyTorch et la variante <code
+							>ViT-B-32-quickgelu</code
+						> du modèle CLIP pour parcourir notre dossier, générer les
+						embeddings de chaque image et les indexer.<br />
+						Sur un petit Intel Core i5 à 16 cœurs, la génération des embeddings
+						prend 12 minutes.
+					</p>
+					<img
+						src="/article/cpu.png"
+						alt="Utilisation CPU pendant la génération des embeddings"
+					/>
+					<img
+						src="/article/fine.png"
+						alt="Résultat de l'indexation"
+					/>
+					<p>
+						Un second script fera les regroupements en partant de
+						cet index et enregistrera un score de similarité. Nous
+						filtrerons sur un score assez strict de 0,9.
+					</p>
+
+					<h2>Évaluations</h2>
+					<p>
+						Afin d'évaluer les regroupements, nous demanderons à
+						notre ami <a href="https://claude.ai/" target="_blank"
+							>Claude</a
+						> de générer une jolie page web qui nous présentera les résultats.
+					</p>
+					<img
+						src="/article/similarity2.png"
+						alt="Premier rendu de la page de résultats"
+					/>
+					<p>Pas mal, mais on peut tropicaliser tout ça…</p>
+					<img
+						src="/article/clau.png"
+						alt="Interface améliorée avec Claude"
+					/>
+					<p>Là, c'est mieux&nbsp;!</p>
+					<img
+						src="/article/similarity3.png"
+						alt="Rendu amélioré des résultats de similarité"
+					/>
+					<p>
+						La recherche visuelle identifie des similarités entre
+						des produits que nous avons déjà identifiés comme
+						variantes d'une même référence.
+					</p>
+					<img
+						src="/article/similarity0.png"
+						alt="Exemple de regroupement — variantes d'une même référence"
+					/>
+					<img
+						src="/article/similarity5.png"
+						alt="Exemple de regroupement visuel 5"
+					/>
+					<img
+						src="/article/similarity4.png"
+						alt="Exemple de regroupement visuel 4"
+					/>
+					<p>
+						En revanche, l'algorithme ignore des détails visuels qui
+						reflètent une différence de prix/qualité comme
+						l'épaisseur et le type de maille.
+					</p>
+
+					<h2>Utilisation</h2>
+					<p>
+						La dernière étape consiste à sauvegarder ces
+						associations dans notre PIM (product information
+						manager) afin qu'elles soient utilisables sur nos sites
+						e-commerce pour faire des recommandations.
+					</p>
+
+					<h2>Conclusion</h2>
+					<p>
+						Rien de magique! Une approche 100% visuelle a des
+						limites et doit être couplée à l'utilisation de filtres
+						classiques par attributs.<br />
+						C'est un workflow qui devra être monitoré, évalué, et réajusté
+						au fil de nombreuses itérations.
+					</p>
+				</div>
+			</article>
+		</div>
+	</body>
+</html>
+
+<style>
+	.article-nav {
+		margin-bottom: 2.5rem;
+	}
+
+	.article-nav a {
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		color: var(--color-muted);
+		text-decoration: none;
+	}
+
+	.article-nav a:hover {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.article-header {
+		margin-bottom: 2.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.article-header h1 {
+		font-size: 1.8rem;
+		font-variation-settings:
+			"opsz" 36,
+			"wght" 700;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		margin-bottom: 0.75rem;
+	}
+
+	.article-meta {
+		font-size: 0.82rem;
+		color: var(--color-muted);
+		font-variation-settings:
+			"opsz" 12,
+			"wght" 400;
+	}
+
+	.article-body {
+		max-width: 680px;
+	}
+
+	.article-body p {
+		margin-bottom: 1.25rem;
+	}
+
+	.article-body h2 {
+		font-size: 1rem;
+		font-variation-settings:
+			"opsz" 14,
+			"wght" 650;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: var(--color-muted);
+		margin-top: 2.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.article-body strong {
+		font-variation-settings:
+			"opsz" 14,
+			"wght" 650;
+	}
+
+	.article-body code {
+		font-family: ui-monospace, monospace;
+		font-size: 0.85em;
+		background: var(--color-tag-bg);
+		color: var(--color-tag-text);
+		padding: 0.1em 0.4em;
+		border-radius: 3px;
+	}
+
+	.article-body img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 1.5rem 0;
+		border: 1px solid var(--color-border);
+	}
+
+	@media (max-width: 720px) {
+		.article-header h1 {
+			font-size: 1.35rem;
+		}
+	}
+</style>

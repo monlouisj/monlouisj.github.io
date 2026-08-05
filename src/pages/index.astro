@@ -4,8 +4,8 @@ import "../styles/resume.css";
 
 const { personal, experience, skills, portfolio } = resume;
 
-const siteUrl = 'https://monlouisj.github.io';
-const description = `${personal.name}, ${personal.title}. ${experience.length} ans d'expérience en développement web — ${skills.development.slice(0, 4).join(', ')} et plus.`;
+const siteUrl = "https://monlouisj.github.io";
+const description = `${personal.name}, ${personal.title}. ${experience.length} ans d'expérience en développement web — ${skills.development.slice(0, 4).join(", ")} et plus.`;
 ---
 
 <html lang="fr">
@@ -22,14 +22,20 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 
 		<!-- Open Graph -->
 		<meta property="og:type" content="profile" />
-		<meta property="og:title" content={`${personal.name} — ${personal.title}`} />
+		<meta
+			property="og:title"
+			content={`${personal.name} — ${personal.title}`}
+		/>
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={siteUrl} />
 		<meta property="og:locale" content="fr_FR" />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content={`${personal.name} — ${personal.title}`} />
+		<meta
+			name="twitter:title"
+			content={`${personal.name} — ${personal.title}`}
+		/>
 		<meta name="twitter:description" content={description} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -250,7 +256,11 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 							{
 								portfolio.map((item) => (
 									<li class="portfolio-item">
-										{item.period && <span class="period">{item.period}</span>}
+										{item.period && (
+											<span class="period">
+												{item.period}
+											</span>
+										)}
 										<h3>{item.name}</h3>
 										<span class="project-desc">
 											{item.description}
@@ -320,7 +330,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 						</div>
 					</section>
 
-					<!-- Hubmonster -->
+					<!-- Hubmonster 
 					<section id="hubmonster" class="section">
 						<div class="badge-item">
 							<img
@@ -344,7 +354,7 @@ const description = `${personal.name}, ${personal.title}. ${experience.length} a
 								>
 							</div>
 						</div>
-					</section>
+					</section>-->
 				</div>
 			</main>
 		</div>
